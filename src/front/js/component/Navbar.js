@@ -23,7 +23,7 @@ export const Navbar = () => {
             </Link>
           </div>
           <div className="ml-auto">
-            <Link to="/contact">
+            <Link to="/contactus">
               <span className="navItem">Contact us</span>
             </Link>
           </div>

@@ -10,6 +10,7 @@ import Register from "./pages/register.js";
 import { Login } from "./pages/login";
 import Filter from "./pages/filter";
 import Details from "./pages/details";
+import ContactUs from "./pages/contactUs";
 import { Navbar } from "./component/Navbar";
 import { Footer } from "./component/Footer";
 
@@ -42,6 +43,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/register">
 							<Register />
+						</Route>
+						<Route exact path="/contactus">
+							<ContactUs />
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />

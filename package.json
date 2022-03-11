@@ -83,6 +83,7 @@
 		"react": "^16.8.4",
 		"react-bootstrap": "^2.1.2",
 		"react-dom": "^16.8.4",
+		"react-geocode": "^0.2.3",
 		"react-polyfills": "0.0.1",
 		"react-router-dom": "^5.2.0",
 		"webfontloader": "^1.6.28"
