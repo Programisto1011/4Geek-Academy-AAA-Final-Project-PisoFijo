@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useContext } from 'react'
+import { Context } from "../store/appContext.js";
 import "../../styles/details.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
@@ -9,9 +10,12 @@ import ContactForm from "../component/ContactForm";
 import OwnCarousel from "../component/Carousel.js";
 import Row from "react-bootstrap/Row";
 
-
+import Map from "../component/Map";
 
 export const Details = (props) => {
+
+  const { store, actions } = useContext(Context);
+  console.log("Selected details: ",store.selected);
 
   return (
     <>
@@ -19,28 +23,34 @@ export const Details = (props) => {
         <Row xs={12} md={12} lg={12} className="img-container-details">
           <Col xs={12} md={12} lg={7}>
             <Row>
-              <OwnCarousel fav={true}/>
+              <OwnCarousel urls={store.selected.thumbnail} fav={true}/>
             </Row>
             <Row>
               <div className="DetailsCard-details">
                 <Row className="d-flex justify-content-center align-items-center">
                   <Col xs={12} md={10} lg={10} xl={10}>
-                    <h4 className="text-center">{props.name}</h4>
+                    <h4 className="text-center">{store.selected.propertyType} in {store.selected.district}</h4> {/*store.selected.name */}
                   </Col>
                   <Col md={2} lg={2} xl={2} className="d-none d-lg-block">
                     <button className="heart-button-details">
-                      <FontAwesomeIcon icon={props.fav == true ? faHeartSolid : faHeart} className="heart-icon-details"/>
+                      <FontAwesomeIcon icon={/*store.selected.fav ==*/ true ? faHeartSolid : faHeart} className="heart-icon-details"/> 
                     </button>
                   </Col>
                 </Row>
                 <Row>               
-                  <h5>{props.type} en {props.location}</h5>
+                  <h5>{store.selected.address}</h5>
                 </Row>
                 <Row className="resume-row pb-2">
-                  <h6> {props.value} € | {props.area} m<sup>2</sup>| {props.numRooms} rooms| {props.floor} floor</h6>
+                  <h6> {store.selected.price} € | {store.selected.size} m<sup>2</sup>| {store.selected.rooms} rooms| {store.selected.bathrooms} floor</h6>
                 </Row>
                 <Row className="resume-row pb-2">
-                  <p className="text-desciption-details">{props.description}</p>
+                  <p className="text-desciption-details">{store.selected.description}</p>
+                </Row>
+                <Row className="resume-row pb-2">
+                  <Map centerRequest={{lat:store.selected.latitude, lng:store.selected.longitude}} 
+                              propertiesSearch={[store.selected]}
+                              viewInfoWindow={false} 
+                  />
                 </Row>
                   <div className="d-lg-none d-xl-none container-buttons-details">
                     <Row className="visit-buttons p-2 d-flex align-items-center">
@@ -52,7 +62,7 @@ export const Details = (props) => {
                       </Col>
                       <Col xs={2} md={2}>
                         <button className="heart-button-details">
-                          <FontAwesomeIcon icon={props.fav == true ? faHeartSolid : faHeart} className="heart-icon-details"/>
+                          <FontAwesomeIcon icon={/*props.fav ==*/ true ? faHeartSolid : faHeart} className="heart-icon-details"/>
                         </button>
                       </Col>
                     </Row> 

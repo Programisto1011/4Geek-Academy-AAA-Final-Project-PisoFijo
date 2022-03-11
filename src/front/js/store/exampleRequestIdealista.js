@@ -1,6 +1,4 @@
-// Method POST: https://api.idealista.com/3.5/es/search?operation=sale&propertyType=homes&center=40.430,-3.702&distance=15000
-
-{
+const exampleRequestIdealista = {
     "elementList": [
         {
             "propertyCode": "96901409",
@@ -1045,3 +1043,5 @@
     "upperRangePosition": 20,
     "paginable": true
 }
+
+export default exampleRequestIdealista;

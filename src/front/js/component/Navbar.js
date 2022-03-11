@@ -17,17 +17,17 @@ export const Navbar = () => {
             <span className="navbar-brand logo mb-0 h1">Piso Fijo</span>
           </Link>
           <div className="ml-auto">
-            <Link to="/home">
+            <Link to="">
               <span className="navItem">Home</span>
             </Link>
           </div>
           <div className="ml-auto">
-            <Link to="/services">
-              <span className="navItem">Services</span>
+            <Link to="/filter">
+              <span className="navItem">Search</span>
             </Link>
           </div>
           <div className="ml-auto">
-            <Link to="/contact">
+            <Link to="/contactus">
               <span className="navItem">Contact us</span>
             </Link>
           </div>

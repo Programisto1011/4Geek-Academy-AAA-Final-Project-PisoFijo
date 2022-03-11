@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import InputGroup from "react-bootstrap/InputGroup";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faMapLocationDot, faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
 import {faEnvelope, faHeart} from '@fortawesome/free-regular-svg-icons'
@@ -24,51 +25,31 @@ import "../../styles/DetailsCard.css"
 
 const DetailsCard = (props) => (
 
-    <Row xs={12} md={12} lg={12}>
-        <div className="container DetailsCard-container float-left">
-            <div className="DetailsCard-view "style={{backgroundImage: `url(${props.urlImg}`,
-                            backgroundPosition: 'center',
-                            backgroundSize: 'cover',
-                            backgroundRepeat: 'no-repeat' }}>
-                <Row className="DetailsCard-icons-menu">  
-                    <Col>
-
-                    </Col>
-                    <Col xs={12} md={12} lg={12}className="DetailsCard-view-button-container">
-                        <button className="DetailsCard-view-button"><FontAwesomeIcon icon={faEnvelope} className="icon-DetailsCard"/></button>
-                        <button className="DetailsCard-view-button"><FontAwesomeIcon icon={faMapLocationDot} className="icon-DetailsCard"/></button>
-                        <button className="DetailsCard-view-button"><p className="icon-DetailsCard">360º</p></button>
-                    </Col>
-                </Row>
-            </div>  
-            
-            <div className="DetailsCard-details">
-                    <Row>               
-                        <Col>
-                            <h5>{props.type} en {props.location}</h5>
-                        </Col>
-                    </Row>
-                    <Row className="resume-row pb-2">
-                        <Col>
-                            <h6> {props.value} € | {props.area} m<sup>2</sup>| {props.numRooms} rooms| {props.floor} baths</h6>
-                        </Col>
-                    </Row>
-                    <Row className="visit-buttons p-2 d-flex align-items-center">
-                        <Col xs={5} md={5}>
-                            <Button className="DetailsCard-button">Visit tour</Button>
-                        </Col>
-                        <Col xs={5} md={5}>
-                            <Button className="DetailsCard-button">Contact <FontAwesomeIcon icon={faEnvelope} className="icon-DetailsCard"/></Button>
-                        </Col>
-                        <Col xs={2} md={2}>
-                            <button className="DetailsCard-heart-button ">
-                                <FontAwesomeIcon icon={props.fav == true ? faHeartSolid : faHeart} className="heart-icon-DetailsCard"/></button>
-                        </Col >
-                    </Row>         
-                    
-            </div>    
-        </div>
-    </Row>
+    <Link to="/details">
+        <Row xs={12} md={12} lg={12}>
+            <div className="container DetailsCard-container float-left">
+                <div className="DetailsCard-view "style={{backgroundImage: `url(${props.urlImg}`,
+                                backgroundPosition: 'center',
+                                backgroundSize: 'cover',
+                                backgroundRepeat: 'no-repeat' }}>
+                </div>  
+                
+                <div className="DetailsCard-details">
+                        <Row>               
+                            <Col>
+                                <h5>{props.type} in {props.location}</h5>
+                            </Col>
+                        </Row>
+                        <Row className="resume-row pb-2">
+                            <Col>
+                                <h6> {props.value} € | {props.area} m<sup>2</sup>| {props.numRooms} rooms| {props.floor} baths</h6>
+                            </Col>
+                        </Row>
+                        
+                </div>    
+            </div>
+        </Row>
+    </Link>
 );
 
 DetailsCard.propTypes = {

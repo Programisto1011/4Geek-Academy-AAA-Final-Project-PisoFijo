@@ -17,35 +17,22 @@ import "../../styles/Carousel.css"
 // npm i --save @fortawesome/pro-solid-svg-icons
 
 const OwnCarousel = (props) => {
+    const urls = [props.urls];
     return (
     <div >
         <div>
             <Carousel className="bg-light text-center">
-                <Carousel.Item className="">
-                    <img
-                    className="img-container-Carousel"
-                    src="https://uploads.candelaestereo.com/1/2017/02/k2_items_src_5591f41814d4d6f47cf954c512de682f.jpg"
-                    alt="First slide"
-                    />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                    className="img-container-Carousel"
-                    src="https://as.com/ocio/imagenes/2016/02/20/conectados/1455967524_894772_1455998651_noticia_grande.jpg"
-                    alt="Second slide"
-                    />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                    className="img-container-Carousel"
-                    src="https://i.pinimg.com/236x/2c/1a/10/2c1a10c8d099902a7036dc0f41a245e3.jpg"
-                    alt="Third slide"
-                    />
-                    {/* <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </Carousel.Caption> */}
-                </Carousel.Item>
+                {urls.map((item, id) => {
+                    return (
+                    <Carousel.Item key="id">
+                        <img
+                            className="img-container-Carousel"
+                            src={item}
+                            alt={`${id} slide`}
+                        />
+                    </Carousel.Item> 
+                    )
+                })}
             </Carousel>
         </div>
         <div className="view-button-container-Carousel">

@@ -3,7 +3,11 @@
     color: #DFDFDF;
     height: auto;
     margin: auto;
-
+    padding-left: 2em;
+    padding-right: 2em;
+}
+.DetailsCard-container:hover{
+    opacity:0.5;
 }
 
 .DetailsCard-view{

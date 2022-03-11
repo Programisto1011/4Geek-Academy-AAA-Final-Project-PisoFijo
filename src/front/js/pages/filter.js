@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext} from 'react'
+import { Context } from "../store/appContext.js";
 
 import "../../styles/filter.css";
 
@@ -9,8 +10,12 @@ import Row from "react-bootstrap/Row";
 
 import FilterMenu from "../component/FilterMenu.js"
 import DetailsCard from '../component/DetailsCard';
+import Map from "../component/Map";
 
 const Filter = () => {
+
+    const { store, actions } = useContext(Context);
+
     return (
     <>
         <div className="container mt-2 mb-2 p-2">
@@ -22,9 +27,13 @@ const Filter = () => {
                 </Col >
                 <Col xs={12} md={12} lg={8} className="d-flex justify-content-center">
                     <div className="Map-container-filter text-center ">
-                        <img src={MapExample} alt="Map example" />
+                        <Map centerRequest={store.centerRequest} 
+                            propertiesSearch={store.propertiesSearch}
+                            viewInfoWindow={true}
+                        />
+                        {/* <img src={MapExample} alt="Map example" /> */}
                         <div className="container-DetailsCard">
-                            <DetailsCard className="container-DetailsCard" />
+                            {/* <DetailsCard className="container-DetailsCard" /> */}
                         </div>
                     </div>
 

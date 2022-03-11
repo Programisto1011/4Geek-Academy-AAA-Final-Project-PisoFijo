@@ -33,3 +33,8 @@
         margin-top: 1em;
     } 
 }
+
+.gm-style-iw:hover {
+    border: 3px blue solid;
+    /* overflow-x: hidden !important;  */
+}
