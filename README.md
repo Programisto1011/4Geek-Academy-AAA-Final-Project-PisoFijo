@@ -17,19 +17,9 @@ Al juntar todas las tecnologias mencionadas podemos obtener como resultado un si
 ## Compilar el código
 Icono de remote explorer y seleccionar ``open browser``en el puerto 3000.
 
-##### and install the npm package:
+##### to visualize you must:
 ```
-$ npm install
+$ npm run start (front)
+$ pip3 run start (back)
 ```
 
-## Start coding!
-
-For Windows, Mac, Linux or Gitpod, start the webpack server with live reload:
-- `$ npm run start`
-
-You can update the `styles/index.css` or `js/index.js` depending on your needs.
-Add more files into your, `./src/js/components` or styles folder as you need them.
-
-## Autores
-Victor
-Javier
