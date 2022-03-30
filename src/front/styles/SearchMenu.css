@@ -25,9 +25,10 @@
 
 .styleSelect {
     background-color: #FB950400;
-      border: none;
-      border-radius: 0;
-      border: 1px solid #FB9504;
+    border: none;
+    border-radius: 0;
+    border: 1px solid #FB9504;
+    font-weight: 2000;
  }
 .icon-SearchMenu{
     color: #FB9504;

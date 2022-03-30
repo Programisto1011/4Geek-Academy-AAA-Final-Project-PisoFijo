@@ -61,7 +61,7 @@ const OwnCarousel = (props) => {
         <button className="view-button-Carousel" onClick={showViewer}>
           <p className="icon-Carousel">3D</p>
         </button>
-        <Link to={{ pathname: "https://pisofijoar.000webhostapp.com" }} target="_blank">
+        <Link to={{ pathname: "https://jseiglie.000webhostapp.com/" }} target="_blank">
         <button className="view-button-Carousel">
           <p className="icon-Carousel">AR</p>
         </button>
@@ -74,7 +74,7 @@ const OwnCarousel = (props) => {
             <iframe
               id="modelViewerView"
               title="PisoFijoModelView"
-              src="https://3000-4geeksacademy-htmlhello-359k3jin6lk.ws-eu34.gitpod.io/"
+              src="https://3000-4geeksacademy-htmlhello-359k3jin6lk.ws-eu38.gitpod.io/"
             ></iframe>
           </div>
           <div className="col-lg-1"></div>
